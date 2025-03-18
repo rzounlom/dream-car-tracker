@@ -1,0 +1,29 @@
+.cars-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Each card takes full width on small screens */
+.car-card {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+/* Two cards per row on medium screens */
+@media (min-width: 768px) {
+  .car-card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* Three cards per row on large screens */
+@media (min-width: 1400px) {
+  .car-card {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
+}

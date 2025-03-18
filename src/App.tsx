@@ -1,11 +1,18 @@
 import "./App.css";
 
-function App() {
+import CarsList from "./components/cars/CarsList";
+import { FC } from "react";
+import Landing from "./components/landing/Landing";
+import Navbar from "./components/navbar/Navbar";
+
+const App: FC = () => {
   return (
     <div className="App">
-      <h1>Dream car tracker</h1>
+      <Navbar />
+      <Landing />
+      <CarsList />
     </div>
   );
-}
+};
 
 export default App;

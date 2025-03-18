@@ -26,8 +26,10 @@ html {
 ::-webkit-scrollbar-thumb {
   width: 3px;
   background: rgb(96, 22, 22);
+  transition: all 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
   background: rgb(238, 162, 162);
 }
