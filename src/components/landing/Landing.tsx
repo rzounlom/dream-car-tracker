@@ -1,6 +1,8 @@
 import "./Landing.css";
 
-const Landing = () => {
+import { FC } from "react";
+
+const Landing: FC = () => {
   return (
     <div className="landing">
       <div className="heading">

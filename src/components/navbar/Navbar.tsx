@@ -1,6 +1,8 @@
 import "./Navbar.css";
 
-const Navbar = () => {
+import { FC } from "react";
+
+const Navbar: FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
