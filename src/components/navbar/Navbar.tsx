@@ -1,23 +1,44 @@
 import "./Navbar.css";
 
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 const Navbar: FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <a href="/">DCT</a>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className={`navbar-brand ${scrolled ? "scrolled" : ""}`}>
+        <a href="/" className={`${scrolled ? "scrolled" : ""}`}>
+          DCT
+        </a>
       </div>
       <div className="navbar-menu">
         <ul>
           <li>
-            <a href="/#cars">Cars</a>
+            <a href="/#cars" className={scrolled ? "scrolled" : ""}>
+              Cars
+            </a>
           </li>
           <li>
-            <a href="#">Add Car</a>
+            <a href="#" className={scrolled ? "scrolled" : ""}>
+              Add Car
+            </a>
           </li>
           <li>
-            <a href="/#contact">Contact</a>
+            <a href="/#contact" className={scrolled ? "scrolled" : ""}>
+              Contact
+            </a>
           </li>
         </ul>
       </div>

@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding: 0 20px;
   align-items: center;
-  height: 8vh;
+  height: 70px;
   transition: background-color 0.3s ease-in-out;
   color: white;
 }
@@ -24,7 +24,7 @@
   text-decoration: none;
 }
 
-.navbar-brand.scrolled {
+.navbar-brand.scrolled a {
   font-weight: 900;
   font-size: 1.5rem;
   color: #1a202c;
@@ -52,6 +52,11 @@
 .navbar .navbar-menu ul li a.scrolled {
   font-weight: 700;
   color: #1a202c;
+}
+
+.navbar .navbar-menu ul li a.scrolled:hover {
+  font-weight: 700;
+  color: lightgray;
 }
 
 .navbar.scrolled {
