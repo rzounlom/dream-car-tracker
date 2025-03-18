@@ -1,9 +1,15 @@
 import "./CarsList.css";
 
-const CarsList = () => {
+import CarCard from "./CarCard";
+import { FC } from "react";
+import { cars } from "../../data";
+
+const CarsList: FC = () => {
   return (
     <div id="cars" className="cars-list">
-      CarsList
+      {cars.map((car) => (
+        <CarCard key={car.id} car={car} />
+      ))}
     </div>
   );
 };

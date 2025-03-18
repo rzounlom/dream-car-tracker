@@ -1,0 +1,81 @@
+.car-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out;
+}
+
+.car-image {
+  width: 100%;
+  height: 40%;
+  object-fit: contain;
+}
+
+.car-details {
+  padding: 15px;
+}
+
+.car-details {
+  max-height: 300pc;
+  overflow: auto;
+}
+
+.car-details h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.car-details p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.car-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: #f8f8f8;
+}
+
+.car-footer button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button {
+  width: 49%;
+  height: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease-in-out;
+  font-weight: 500;
+  background-color: white;
+}
+
+button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.edit-btn {
+  border: 1px solid #3498db;
+}
+
+.edit-btn:hover {
+  background: #3498db;
+}
+
+.delete-btn {
+  border: 1px solid red;
+}
+
+.delete-btn:hover {
+  background-color: red;
+}
