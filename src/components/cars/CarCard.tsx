@@ -1,7 +1,9 @@
 import "./CarCard.css";
 
 import { Car } from "../../types";
+import { IoMdHeartEmpty } from "react-icons/io";
 import React from "react";
+import { TiHeartFullOutline } from "react-icons/ti";
 
 interface CarCardProps {
   car: Car;
@@ -16,6 +18,18 @@ const CarCard: React.FC<CarCardProps> = ({
 }) => {
   return (
     <div className="car-card">
+      <div
+        className="favorite-icon"
+        onClick={() => updateCar(id, { favorite: !favorite })}
+      >
+        <div role="img" aria-label="favorite" className="favorite-icon">
+          {favorite ? (
+            <TiHeartFullOutline className="full" />
+          ) : (
+            <IoMdHeartEmpty className="empty" />
+          )}
+        </div>
+      </div>
       <img
         src={imageUrl}
         alt={`${year} ${make} ${model}`}
