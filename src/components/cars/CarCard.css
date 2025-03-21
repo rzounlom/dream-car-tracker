@@ -40,6 +40,11 @@
   overflow: auto;
 }
 
+.car-details .car-header {
+  display: flex;
+  align-items: center;
+}
+
 .car-details h3 {
   margin: 10px 0;
   font-size: 1.2rem;
