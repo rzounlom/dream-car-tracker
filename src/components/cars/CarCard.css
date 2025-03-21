@@ -25,10 +25,15 @@
   background-color: rgb(255, 255, 255);
 }
 
-.car-image {
+.car-img {
+  height: 500;
+}
+
+.car-img img {
+  z-index: 100;
   width: 100%;
-  height: 40%;
-  object-fit: contain;
+  object-fit: cover;
+  max-height: 300px;
 }
 
 .car-details {
@@ -36,7 +41,7 @@
 }
 
 .car-details {
-  max-height: 300pc;
+  height: 400px;
   overflow: auto;
 }
 

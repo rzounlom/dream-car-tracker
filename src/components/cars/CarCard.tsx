@@ -30,11 +30,10 @@ const CarCard: React.FC<CarCardProps> = ({
           )}
         </div>
       </div>
-      <img
-        src={imageUrl}
-        alt={`${year} ${make} ${model}`}
-        className="car-image"
-      />
+      <div className="car-img">
+        <img src={imageUrl} alt={`${year} ${make} ${model}`} />
+      </div>
+
       <div className="car-details">
         <h3>
           {year} {make} {model}
