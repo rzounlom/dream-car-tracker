@@ -5,6 +5,9 @@ export type Car = {
   year: string;
   description: string;
   imageUrl: string;
+  favorite: boolean;
+  createdAt: string;
+  updatedAt: string;
 };
 
-export type CarWithoutId = Omit<Car, "id">;
+export type NewCar = Omit<Car, "id">;

@@ -5,10 +5,14 @@ import React from "react";
 
 interface CarCardProps {
   car: Car;
+  updateCar: (id: string, updatedCar: Partial<Car>) => void;
+  deleteCar: (id: string) => void;
 }
 
 const CarCard: React.FC<CarCardProps> = ({
-  car: { year, make, model, description, imageUrl },
+  car: { year, make, model, description, imageUrl, id, favorite },
+  updateCar,
+  deleteCar,
 }) => {
   return (
     <div className="car-card">
@@ -24,8 +28,15 @@ const CarCard: React.FC<CarCardProps> = ({
         <p>{description}</p>
       </div>
       <div className="car-footer">
-        <button className="edit-btn">Edit</button>
-        <button className="delete-btn">Delete</button>
+        <button
+          className="edit-btn"
+          onClick={() => updateCar(id, { favorite: !favorite })}
+        >
+          Edit
+        </button>
+        <button className="delete-btn" onClick={() => deleteCar(id)}>
+          Delete
+        </button>
       </div>
     </div>
   );
