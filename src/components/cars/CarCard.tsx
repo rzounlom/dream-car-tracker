@@ -1,5 +1,6 @@
 import "./CarCard.css";
 
+import { Button } from "react-bootstrap";
 import { Car } from "../../types";
 import { IoMdHeartEmpty } from "react-icons/io";
 import React from "react";
@@ -41,15 +42,20 @@ const CarCard: React.FC<CarCardProps> = ({
         <p>{description}</p>
       </div>
       <div className="car-footer">
-        <button
+        <Button
+          variant="outline-primary"
           className="edit-btn"
           onClick={() => updateCar(id, { favorite: !favorite })}
         >
           Edit
-        </button>
-        <button className="delete-btn" onClick={() => deleteCar(id)}>
+        </Button>
+        <Button
+          variant="outline-danger"
+          className="delete-btn"
+          onClick={() => deleteCar(id)}
+        >
           Delete
-        </button>
+        </Button>
       </div>
     </div>
   );

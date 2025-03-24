@@ -11,8 +11,8 @@ export const defaultCars: Car[] = [
     imageUrl:
       "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:good,w_1920/cms/uploads/qk0zv5w7abyztbrwn1gp",
     favorite: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: "2025-03-24T23:27:10.407Z",
+    updatedAt: "2025-03-24T23:27:10.407Z",
   },
   {
     id: "2",
@@ -24,8 +24,8 @@ export const defaultCars: Car[] = [
     imageUrl:
       "https://hips.hearstapps.com/hmg-prod/images/2023-lamborghini-huracan-sterrato127-6467c8f12dcce.jpg?crop=0.739xw:0.624xh;0.0977xw,0.351xh&resize=2048:*",
     favorite: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: "2025-03-24T23:27:10.407Z",
+    updatedAt: "2025-03-24T23:27:10.407Z",
   },
   {
     id: "3",
@@ -37,8 +37,8 @@ export const defaultCars: Car[] = [
     imageUrl:
       "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:good,w_1920/cms/uploads/qk0zv5w7abyztbrwn1gp",
     favorite: false,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: "2025-03-24T23:27:10.407Z",
+    updatedAt: "2025-03-24T23:27:10.407Z",
   },
   {
     id: "4",
@@ -50,8 +50,8 @@ export const defaultCars: Car[] = [
     imageUrl:
       "https://hips.hearstapps.com/hmg-prod/images/2023-lamborghini-huracan-sterrato127-6467c8f12dcce.jpg?crop=0.739xw:0.624xh;0.0977xw,0.351xh&resize=2048:*",
     favorite: false,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: "2025-03-24T23:27:10.407Z",
+    updatedAt: "2025-03-24T23:27:10.407Z",
   },
   {
     id: "5",
@@ -63,8 +63,8 @@ export const defaultCars: Car[] = [
     imageUrl:
       "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:good,w_1920/cms/uploads/qk0zv5w7abyztbrwn1gp",
     favorite: false,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: "2025-03-24T23:27:10.407Z",
+    updatedAt: "2025-03-24T23:27:10.407Z",
   },
   {
     id: "6",
@@ -76,7 +76,7 @@ export const defaultCars: Car[] = [
     imageUrl:
       "https://hips.hearstapps.com/hmg-prod/images/2023-lamborghini-huracan-sterrato127-6467c8f12dcce.jpg?crop=0.739xw:0.624xh;0.0977xw,0.351xh&resize=2048:*",
     favorite: false,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: "2025-03-24T23:27:10.407Z",
+    updatedAt: "2025-03-24T23:27:10.407Z",
   },
 ];

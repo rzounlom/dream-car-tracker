@@ -12,6 +12,7 @@ import { sortCarsByCreatedAt } from "./utils/helpers";
 
 const App: FC = () => {
   const [cars, setCars] = useState<Car[]>(defaultCars);
+  console.log({ cars });
 
   // Create a new car
   const addCar = (newCar: NewCar) => {
