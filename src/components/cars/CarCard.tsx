@@ -23,12 +23,8 @@ const CarCard: React.FC<CarCardProps> = ({
         className="favorite-icon"
         onClick={() => updateCar(id, { favorite: !favorite })}
       >
-        <div role="img" aria-label="favorite" className="favorite-icon">
-          {favorite ? (
-            <TiHeartFullOutline className="full" />
-          ) : (
-            <IoMdHeartEmpty className="empty" />
-          )}
+        <div className="favorite-icon">
+          {favorite ? <TiHeartFullOutline /> : <IoMdHeartEmpty />}
         </div>
       </div>
       <div className="car-img">
