@@ -44,6 +44,7 @@
   letter-spacing: 2px;
   text-decoration: none;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .navbar .navbar-menu ul li a:hover {

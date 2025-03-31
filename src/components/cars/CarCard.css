@@ -6,12 +6,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
-.car-image {
+.car-card .favorite-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  top: 0;
+  right: 0;
+  color: red;
+  font-size: 1.5rem;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(255, 255, 255);
+}
+
+.car-img {
+  height: 500;
+}
+
+.car-img img {
+  z-index: 100;
   width: 100%;
-  height: 40%;
-  object-fit: contain;
+  object-fit: cover;
+  max-height: 300px;
 }
 
 .car-details {
@@ -19,8 +41,13 @@
 }
 
 .car-details {
-  max-height: 300pc;
+  height: 400px;
   overflow: auto;
+}
+
+.car-details .car-header {
+  display: flex;
+  align-items: center;
 }
 
 .car-details h3 {
