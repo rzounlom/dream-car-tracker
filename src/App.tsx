@@ -3,6 +3,7 @@ import "./App.css";
 import { Car, NewCar } from "./types";
 import { FC, useState } from "react";
 
+import AddCarModal from "./components/modals/AddCarModal";
 import CarsList from "./components/cars/CarsList";
 import Footer from "./components/footer/Footer";
 import Landing from "./components/landing/Landing";
@@ -11,8 +12,14 @@ import { defaultCars } from "./data";
 import { sortCarsByCreatedAt } from "./utils/helpers";
 
 const App: FC = () => {
+  const [show, setShow] = useState(false);
   const [cars, setCars] = useState<Car[]>(defaultCars);
   console.log({ cars });
+
+  // Show the modal
+  const handleOpen = () => setShow(true);
+  // Hide the modal
+  const handleClose = () => setShow(false);
 
   // Create a new car
   const addCar = (newCar: NewCar) => {
@@ -38,7 +45,12 @@ const App: FC = () => {
 
   return (
     <div className="App">
-      <Navbar addCar={addCar} />
+      <AddCarModal
+        show={show}
+        handleClose={handleClose}
+        handleAddCar={addCar}
+      />
+      <Navbar addCar={addCar} handleOpen={handleOpen} />
       <Landing />
       <CarsList
         cars={sortedCars}
