@@ -45,11 +45,11 @@ const AddCar: FC<AddCarModalProps> = ({ show, handleClose, handleAddCar }) => {
 
     // Create a new car object with the form data
     const newCar: NewCar = {
-      year: formData.year || "",
-      make: formData.make || "",
-      model: formData.model || "",
-      description: formData.description || "",
-      imageUrl: formData.imageUrl || "",
+      year: formData.year ?? "",
+      make: formData.make ?? "",
+      model: formData.model ?? "",
+      description: formData.description ?? "",
+      imageUrl: formData.imageUrl ?? "",
       favorite: false,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
