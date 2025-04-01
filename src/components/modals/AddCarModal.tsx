@@ -70,7 +70,21 @@ const AddCar: FC<AddCarModalProps> = ({ show, handleClose, handleAddCar }) => {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} size="lg">
+      <Modal
+        show={show}
+        onHide={() => {
+          handleClose();
+          setFormData({
+            year: "",
+            make: "",
+            model: "",
+            description: "",
+            imageUrl: "",
+          });
+          setValidated(false);
+        }}
+        size="lg"
+      >
         <Modal.Header closeButton>
           <Modal.Title>Add Car</Modal.Title>
         </Modal.Header>
