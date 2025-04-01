@@ -14,7 +14,6 @@ import { sortCarsByCreatedAt } from "./utils/helpers";
 const App: FC = () => {
   const [show, setShow] = useState(false);
   const [cars, setCars] = useState<Car[]>(defaultCars);
-  console.log({ cars });
 
   // Show the modal
   const handleOpen = () => setShow(true);
