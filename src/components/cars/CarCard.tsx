@@ -1,9 +1,11 @@
 import "./CarCard.css";
 
+import React, { useState } from "react";
+
 import { Button } from "react-bootstrap";
 import { Car } from "../../types";
+import DeleteCarModal from "../modals/DeleteCarModal";
 import { IoMdHeartEmpty } from "react-icons/io";
-import React from "react";
 import { TiHeartFullOutline } from "react-icons/ti";
 
 interface CarCardProps {
@@ -17,6 +19,15 @@ const CarCard: React.FC<CarCardProps> = ({
   updateCar,
   deleteCar,
 }) => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleDelete = () => {
+    deleteCar(id);
+    handleClose();
+  };
+
   return (
     <div className="car-card">
       <div
@@ -45,13 +56,12 @@ const CarCard: React.FC<CarCardProps> = ({
         >
           Edit
         </Button>
-        <Button
-          variant="outline-danger"
-          className="delete-btn"
-          onClick={() => deleteCar(id)}
-        >
-          Delete
-        </Button>
+        <DeleteCarModal
+          show={show}
+          handleShow={handleShow}
+          handleClose={handleClose}
+          handleDelete={handleDelete}
+        />
       </div>
     </div>
   );
