@@ -1,6 +1,7 @@
 import { Car, NewCar } from "../types";
 
-const API_URL = "http://localhost:3000/cars";
+// const API_URL = "http://localhost:3000/cars";
+const API_URL = "https://63c07b07e262345656ffb291.mockapi.io/dct-cars";
 
 export const fetchCars = async () => {
   try {

@@ -1,6 +1,5 @@
 import "./SingleCarCard.css";
 
-import { Link, useRevalidator } from "react-router-dom";
 import React, { useState } from "react";
 
 import { Button } from "react-bootstrap";
@@ -8,6 +7,7 @@ import { Car } from "../../types";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { updateCar } from "../../api";
+import { useRevalidator } from "react-router-dom";
 
 interface SingleCarCardProps {
   car: Car;
@@ -62,6 +62,7 @@ const SingleCarCard: React.FC<SingleCarCardProps> = ({
           variant="outline-primary"
           className="edit-btn"
           disabled={loading}
+          onClick={handleToggleFavorite}
         >
           Edit
         </Button>

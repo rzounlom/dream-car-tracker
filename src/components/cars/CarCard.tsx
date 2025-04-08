@@ -72,6 +72,7 @@ const CarCard: React.FC<CarCardProps> = ({
           variant="outline-primary"
           className="edit-btn"
           disabled={loading}
+          onClick={handleToggleFavorite}
         >
           Edit
         </Button>
