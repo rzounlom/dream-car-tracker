@@ -6,10 +6,10 @@ import { NewCar } from "../../types";
 type AddCarModalProps = {
   show: boolean;
   handleClose: () => void;
-  handleAddCar: (car: NewCar) => void;
+  // handleAddCar: (car: NewCar) => void;
 };
 
-const AddCar: FC<AddCarModalProps> = ({ show, handleClose, handleAddCar }) => {
+const AddCar: FC<AddCarModalProps> = ({ show, handleClose }) => {
   const [validated, setValidated] = useState(false);
 
   const [formData, setFormData] = useState<Partial<NewCar>>({
@@ -29,6 +29,11 @@ const AddCar: FC<AddCarModalProps> = ({ show, handleClose, handleAddCar }) => {
       ...prevData,
       [name]: value, // Use name attribute to update the correct field
     }));
+  };
+
+  const handleAddCar = (newCar: any) => {
+    console.log("New car added:", newCar);
+    // Add your logic to handle the new car here
   };
 
   const handleSubmit = (e: React.FormEvent) => {

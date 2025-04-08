@@ -1,4 +1,7 @@
-.car-card {
+.single-car-card {
+  height: 100%;
+  width: 60%;
+  min-height: 500px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -9,7 +12,7 @@
   position: relative;
 }
 
-.car-card .favorite-icon {
+.single-car-card .favorite-icon {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -26,14 +29,15 @@
 }
 
 .car-img {
-  height: 500;
+  height: 70%;
+  width: 100%;
 }
 
 .car-img img {
-  z-index: 100;
+  height: 100%;
   width: 100%;
+  z-index: 100;
   object-fit: cover;
-  max-height: 300px;
 }
 
 .car-details {
@@ -41,7 +45,7 @@
 }
 
 .car-details {
-  height: 250px;
+  height: auto;
 }
 
 .car-details span {
@@ -86,7 +90,7 @@
 }
 
 button {
-  width: 49%;
+  width: 100%;
   height: 48px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.25s ease-in-out;
@@ -105,12 +109,4 @@ button:hover {
 
 .edit-btn:hover {
   background: #3498db;
-}
-
-.delete-btn {
-  border: 1px solid red;
-}
-
-.delete-btn:hover {
-  background-color: red;
 }
