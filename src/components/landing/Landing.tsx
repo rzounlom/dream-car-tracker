@@ -1,6 +1,7 @@
 import "./Landing.css";
 
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 const Landing: FC = () => {
   return (
@@ -8,7 +9,7 @@ const Landing: FC = () => {
       <div className="heading">
         <h1>Dream Car Tracker</h1>
         <button data-toggle="modal" data-target="#addCarModal">
-          <a href="/#cars">View Cars</a>
+          <Link to="/cars">View Cars</Link>
         </button>
       </div>
     </div>

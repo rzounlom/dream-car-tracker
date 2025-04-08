@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { FC, useEffect, useState } from "react";
 
 import AddCarModal from "../modals/AddCarModal";
+import { Link } from "react-router-dom";
 
 const Navbar: FC = () => {
   const [show, setShow] = useState(false);
@@ -35,9 +36,9 @@ const Navbar: FC = () => {
         <div className="navbar-menu">
           <ul>
             <li>
-              <a href="/#cars" className={scrolled ? "scrolled" : ""}>
+              <Link to="/cars" className={scrolled ? "scrolled" : ""}>
                 Cars
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -49,9 +50,9 @@ const Navbar: FC = () => {
               </a>
             </li>
             <li>
-              <a href="/#contact" className={scrolled ? "scrolled" : ""}>
+              <Link to="/contact" className={scrolled ? "scrolled" : ""}>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
