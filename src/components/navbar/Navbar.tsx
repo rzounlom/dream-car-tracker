@@ -29,9 +29,9 @@ const Navbar: FC = () => {
       <AddCarModal show={show} handleClose={handleClose} />
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className={`navbar-brand ${scrolled ? "scrolled" : ""}`}>
-          <a href="/" className={`${scrolled ? "scrolled" : ""}`}>
+          <Link to="/" className={`${scrolled ? "scrolled" : ""}`}>
             DCT
-          </a>
+          </Link>
         </div>
         <div className="navbar-menu">
           <ul>
