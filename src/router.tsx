@@ -1,5 +1,12 @@
+import {
+  carsLoader,
+  favoriteCarsLoader,
+  singleCarLoader,
+} from "./loaders/carsLoader";
+
+import AddCar from "./pages/add-car/AddCar";
 import CarsPage from "./pages/cars/CarsPage";
-import Contact from "./pages/contact/Contact";
+import FavoritesPage from "./pages/favorites/FavoritesPage";
 import HomePage from "./pages/home/HomePage";
 import RootLayout from "./components/layout/RootLayout";
 import SingleCarPage from "./pages/single-car/SingeCarsPage";
@@ -17,14 +24,21 @@ export const router = createBrowserRouter([
       {
         path: "/cars",
         element: <CarsPage />,
+        loader: carsLoader,
       },
       {
         path: "/cars/:id",
         element: <SingleCarPage />,
+        loader: singleCarLoader,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/add",
+        element: <AddCar />,
+      },
+      {
+        path: "/favorites",
+        element: <FavoritesPage />,
+        loader: favoriteCarsLoader,
       },
     ],
   },

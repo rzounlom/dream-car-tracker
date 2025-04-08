@@ -1,28 +1,23 @@
-import "./CarCard.css";
+import "./SingleCarCard.css";
 
 import { Link, useRevalidator } from "react-router-dom";
 import React, { useState } from "react";
 
 import { Button } from "react-bootstrap";
 import { Car } from "../../types";
-import DeleteCarModal from "../modals/DeleteCarModal";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { updateCar } from "../../api";
 
-interface CarCardProps {
+interface SingleCarCardProps {
   car: Car;
 }
 
-const CarCard: React.FC<CarCardProps> = ({
+const SingleCarCard: React.FC<SingleCarCardProps> = ({
   car: { year, make, model, description, imageUrl, id, favorite },
 }) => {
-  const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const { revalidate } = useRevalidator();
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleToggleFavorite = async () => {
     setLoading(true);
@@ -46,7 +41,7 @@ const CarCard: React.FC<CarCardProps> = ({
   };
 
   return (
-    <div className="car-card single-car">
+    <div className="single-car-card">
       <div className="favorite-icon" onClick={handleToggleFavorite}>
         <div className="favorite-icon">
           {favorite ? <TiHeartFullOutline /> : <IoMdHeartEmpty />}
@@ -60,12 +55,7 @@ const CarCard: React.FC<CarCardProps> = ({
         <h3>
           {year} {make} {model}
         </h3>
-        <p>
-          {description?.slice(0, 500)}...
-          <Link to={`/cars/${id}`}>
-            <span className="view-more">View More</span>
-          </Link>
-        </p>
+        <p>{description}</p>
       </div>
       <div className="car-footer">
         <Button
@@ -75,15 +65,9 @@ const CarCard: React.FC<CarCardProps> = ({
         >
           Edit
         </Button>
-        <DeleteCarModal
-          id={id}
-          show={show}
-          handleShow={handleShow}
-          handleClose={handleClose}
-        />
       </div>
     </div>
   );
 };
 
-export default CarCard;
+export default SingleCarCard;

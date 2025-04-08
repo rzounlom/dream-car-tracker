@@ -2,15 +2,9 @@ import "./Navbar.css";
 
 import { FC, useEffect, useState } from "react";
 
-import AddCarModal from "../modals/AddCarModal";
 import { Link } from "react-router-dom";
 
 const Navbar: FC = () => {
-  const [show, setShow] = useState(false);
-  // Show the modal
-  const handleOpen = () => setShow(true);
-  // Hide the modal
-  const handleClose = () => setShow(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,7 +20,6 @@ const Navbar: FC = () => {
 
   return (
     <>
-      <AddCarModal show={show} handleClose={handleClose} />
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className={`navbar-brand ${scrolled ? "scrolled" : ""}`}>
           <Link to="/" className={`${scrolled ? "scrolled" : ""}`}>
@@ -40,14 +33,15 @@ const Navbar: FC = () => {
                 Cars
               </Link>
             </li>
+
             <li>
-              <a className={scrolled ? "scrolled" : ""} onClick={handleOpen}>
-                Add Car
-              </a>
+              <Link to="/favorites" className={scrolled ? "scrolled" : ""}>
+                Favorites
+              </Link>
             </li>
             <li>
-              <Link to="/contact" className={scrolled ? "scrolled" : ""}>
-                Contact
+              <Link to="add" className={scrolled ? "scrolled" : ""}>
+                Add Car
               </Link>
             </li>
           </ul>

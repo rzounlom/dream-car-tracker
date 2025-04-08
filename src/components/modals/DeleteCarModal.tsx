@@ -1,26 +1,45 @@
+import { FC, useState } from "react";
+
 import Button from "react-bootstrap/Button";
-import { FC } from "react";
 import Modal from "react-bootstrap/Modal";
+import { deleteCar } from "../../api";
+import { useRevalidator } from "react-router-dom";
 
 type DeleteCarModalProps = {
+  id: string;
   show: boolean;
   handleShow: () => void;
   handleClose: () => void;
-  handleDelete: () => void;
 };
 
 const DeleteCarModal: FC<DeleteCarModalProps> = ({
+  id,
   show,
   handleClose,
-  handleDelete,
   handleShow,
 }) => {
+  const [loading, setLoading] = useState(false);
+  const { revalidate } = useRevalidator();
+  const handleDelete = async () => {
+    setLoading(true);
+    try {
+      await deleteCar(id); // ✅ use your deleteCar function
+      revalidate(); // 🔁 refresh the loader for /cars
+      handleClose(); // 👋 close the modal
+    } catch (error) {
+      console.error("Error deleting car:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Button
         variant="outline-danger"
         onClick={handleShow}
         className="delete-btn"
+        disabled={loading}
       >
         Delete
       </Button>
@@ -35,6 +54,7 @@ const DeleteCarModal: FC<DeleteCarModalProps> = ({
             variant="secondary"
             onClick={handleClose}
             style={{ width: "48%" }}
+            disabled={loading}
           >
             Cancel
           </Button>
@@ -42,6 +62,7 @@ const DeleteCarModal: FC<DeleteCarModalProps> = ({
             variant="danger"
             onClick={handleDelete}
             style={{ width: "48%" }}
+            disabled={loading}
           >
             Confirm Delete
           </Button>

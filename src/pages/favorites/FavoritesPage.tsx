@@ -5,7 +5,7 @@ import { FC } from "react";
 import { MoonLoader } from "react-spinners";
 import { sortCarsByCreatedAt } from "../../utils/helpers";
 
-const CarsPage: FC = () => {
+const FavoritesPage: FC = () => {
   const fetcher = useFetcher();
   const loading = fetcher.state === "loading";
 
@@ -13,7 +13,18 @@ const CarsPage: FC = () => {
   const sortedCars = sortCarsByCreatedAt(cars);
 
   return (
-    <div style={{ marginTop: "70px" }}>
+    <div
+      style={{
+        marginTop: "70px",
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+      }}
+    >
+      <h2>Favorite Cars</h2>
       <MoonLoader
         loading={loading}
         size={150}
@@ -22,7 +33,7 @@ const CarsPage: FC = () => {
       />
       <div>
         {!loading && !cars.length ? (
-          <h2 style={{ color: "white" }}>No cars added yet</h2>
+          <h2 style={{ color: "white" }}>No favorite cars added yet</h2>
         ) : (
           <CarsList cars={sortedCars} />
         )}
@@ -31,4 +42,4 @@ const CarsPage: FC = () => {
   );
 };
 
-export default CarsPage;
+export default FavoritesPage;
