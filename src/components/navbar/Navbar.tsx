@@ -41,11 +41,7 @@ const Navbar: FC = () => {
               </Link>
             </li>
             <li>
-              <a
-                // href="#/cars"
-                className={scrolled ? "scrolled" : ""}
-                onClick={handleOpen}
-              >
+              <a className={scrolled ? "scrolled" : ""} onClick={handleOpen}>
                 Add Car
               </a>
             </li>
