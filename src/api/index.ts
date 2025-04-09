@@ -1,6 +1,6 @@
 import { Car, NewCar } from "../types";
 
-const API_URL = "http://localhost:3000/cars";
+const API_URL = "https://67f5cd60913986b16fa59449.mockapi.io/cars";
 
 export const fetchCars = async () => {
   try {
